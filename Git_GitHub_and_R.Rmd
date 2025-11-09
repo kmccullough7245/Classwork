@@ -7,7 +7,7 @@ output: html_notebook
 
 # Instructions (Step by Step)
 
-##Step 1: Create fake data
+## Step 1: Create fake data
 ```{r}
 # Creating a small fake dataset
 set.seed(2073) # allows for reproducibility 
