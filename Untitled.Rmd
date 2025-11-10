@@ -1,0 +1,22 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(nycflights13)
+data("flights")
+library(tidyr)
+```
+
+```{r}
+flights
+```
+
+
+```{r}
+flights %>%
+  select(year, month, day, hour, minute) %>%
+  mutate(departure = make_datetime(year, month, day, hour, minute))
+```
+

@@ -4,6 +4,10 @@ author: "Enter Your Name"
 output: html_notebook
 ---
 
+```{r}
+library("tidyr")
+library("dplyr")
+```
 
 # Instructions (Step by Step)
 
@@ -27,7 +31,8 @@ head(students)
 
 ```{r}
 # Remove the Name column
-
+Students_Clean <- students %>%
+  select(StudyHours, Satisfaction, Major)
 ```
 
 
@@ -35,6 +40,8 @@ head(students)
 Why might someone drop a column like name or ID from a dataset?
 
 ### Answer:
+To make the data pulled from it unbiased if they know who the students are. It would also protect for things like hippa and educational privacy acts. 
+
 
 ## Step 3: Visualize
 ```{r}
@@ -62,6 +69,12 @@ ggplot(Students_Clean, aes(x = Major, y = Satisfaction, fill = Major)) +
 3. Do you think this chart is accurate?
 4. Why? Why not?
 
+### Answers: 
+1. Math majors have the lowest Q1 to Q3 range, however it has one of the largest spread between minimum and maximum. 
+2. I think that math majors tend to expect their major and so they like it more. I think that for the other majors they think theyll be doing other things and end up not satisfied with what they actually end up doing.
+3. Yes
+4. Because it makes sense that math majors would be the most satisfied with their major because it is most like what they expect. I think Computer science majors are least satisfied because they think they'll be working on stuff other than what they expected to work on. Also the CS job market is bad right now leading to lower satisifaction. 
+
 ## Step 5: Questions on Git, GitHub and R Markdown
 
 ### Questions:
@@ -74,4 +87,9 @@ ggplot(Students_Clean, aes(x = Major, y = Satisfaction, fill = Major)) +
 6. How could R Markdown help you explain your analysis to someone else?
 
 ### Answers:
-
+1. It adds the current saved file to the staging area. 
+2. git commit is taking a snapshot of the saved files and adding them to the repository. You can also add comment on commit in git commit. Git push is pushing your code to a remote server such as github.
+3. Github stores the code for you and makes it easy to add changes and track them. 
+4. It helps you so see what other people in your group have done and when they have worked on it. It also allows you to go. back to previous versions of code if you need to fix something someone else has done. 
+5. A code chunk is where there is actual code that is executed and has to be formatted in the coding language used. Regular text can be in any format however there are commands such as using ## to make a heading.
+6. R markdown makes it easy to separate your code into chunks and you can explain it little by little as you go using regular text outside of the code chunks. It makes it so you don't have to comment on your code as much because you can make whole statements in text lines of rmarkdown. 
